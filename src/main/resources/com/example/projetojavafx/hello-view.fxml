@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" prefHeight="800.0" prefWidth="800.0" spacing="20.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projetojavafx.FuncionarioController">
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+    </padding>
+    <children>
+        <HBox spacing="20.0">
+            <children>
+                <VBox>
+                    <children>
+                        <Label text="Nome" />
+                        <TextField fx:id="nomeTextField" promptText="Digite o nome do funcionário" />
+                        <Label text="Matrícula" />
+                        <TextField fx:id="matriculaTextField" promptText="Digite a matrícula" />
+                        <Label text="CPF" />
+                        <TextField fx:id="cpfTextField" promptText="Digite o CPF" />
+                        <Label text="Cargo" />
+                        <TextField fx:id="cargoTextField" promptText="Digite o cargo" />
+                        <Label text="Salário" />
+                        <TextField fx:id="salarioTextField" promptText="Digite o salário" />
+                        <Label text="Data de Nascimento" />
+                        <TextField fx:id="dataNascimentoTextField" promptText="Digite a data de nascimento" />
+                    </children>
+                </VBox>
+                <VBox>
+                    <children>
+                        <Label text="Logradouro" />
+                        <TextField fx:id="logradouroTextField" promptText="Digite o logradouro" />
+                        <Label text="Número" />
+                        <TextField fx:id="numeroTextField" promptText="Digite o número" />
+                        <Label text="Complemento" />
+                        <TextField fx:id="complementoTextField" promptText="Digite o complemento" />
+                        <Label text="Bairro" />
+                        <TextField fx:id="bairroTextField" promptText="Digite o bairro" />
+                        <Label text="Cidade" />
+                        <TextField fx:id="cidadeTextField" promptText="Digite a cidade" />
+                        <Label text="Estado" />
+                        <TextField fx:id="estadoTextField" promptText="Digite o estado" />
+                        <Label text="CEP" />
+                        <TextField fx:id="cepTextField" promptText="Digite o CEP" />
+                    </children>
+                </VBox>
+                <VBox>
+                    <children>
+                        <Label text="Cargo Filtro" />
+                        <TextField fx:id="FiltroCargoTextField" promptText="Filtro Cargo" />
+                        <Label text="Salario MIN Filtro" />
+                        <TextField fx:id="FiltroSalarioMinimoTextField" promptText="Filtro Salario" />
+                        <Label text="Salario MAX Filtro" />
+                        <TextField fx:id="FiltroSalarioMaximoTextField" promptText="Filtro Salario" />
+                        <Label text="Agrupar por cidade" />
+                        <TextField fx:id="FiltroCidadeTextField" promptText="AgruparCidade" />
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+
+        <HBox spacing="20.0">
+            <children>
+                <Button fx:id="salvarButton" onAction="#salvarFuncionario" text="Salvar" />
+                <Button fx:id="CarregarValores" onAction="#carregarValores" text="Carregar" />
+                <Button fx:id="excluirFuncionarios" onAction="#excluirFuncionarios" text="Excluir" />
+                <Button fx:id="filtrarCargo" onAction="#filtrarCargo" text="Filtrar Cargo" />
+                <Button fx:id="filtrarSalario" onAction="#filtrarSalario" text="Filtrar Salario" />
+                <Button fx:id="filtrarCidade" onAction="#filtrarCidade" text="Agrupar Cidade" />
+                <Button fx:id="mediaSalarial" onAction="#mediaSalarial" text="MediaSalarial" />
+            </children>
+        </HBox>
+
+        <Label text="Lista de Funcionários" style="-fx-font-weight: bold; -fx-font-size: 16px;"/>
+        <TableView fx:id="funcionariosTableView" prefHeight="200.0" prefWidth="760.0">
+            <columns>
+                <TableColumn fx:id="nomeColumn" prefWidth="150.0" text="Nome" />
+                <TableColumn fx:id="matriculaColumn" prefWidth="100.0" text="Matrícula" />
+                <TableColumn fx:id="cpfColumn" prefWidth="120.0" text="CPF" />
+                <TableColumn fx:id="cargoColumn" prefWidth="100.0" text="Cargo" />
+                <TableColumn fx:id="salarioColumn" prefWidth="100.0" text="Salário" />
+                <TableColumn fx:id="dataNascimentoColumn" prefWidth="120.0" text="Data de Nascimento" />
+                <TableColumn fx:id="enderecoColumn" prefWidth="150.0" text="Endereço" />
+            </columns>
+        </TableView>
+    </children>
+</VBox>
